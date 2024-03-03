@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace FIndMeARoomatate.DataLayer.Repositories
 {
-    public class StudentRepository
+    public class AnnouncementRepository
     {
-        public void AddStudent(Student student)
+        public void AddAnnouncement(Announcement student)
         { // DbContext Add Method
             var dbContext = new RoommateDBContext();
-            dbContext.Students.Add(student);
+            dbContext.Announcements.Add(student);
             dbContext.SaveChanges();
         }
 
@@ -22,7 +22,7 @@ namespace FIndMeARoomatate.DataLayer.Repositories
         {
             var context = new RoommateDBContext();
             var students = context.Students.ToList();
-      
+
             return students;
         }
         // Get By ID
