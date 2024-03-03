@@ -19,6 +19,7 @@ namespace FIndMeARoomatate.DataLayer.DatabaseContext
         public DbSet<Announcement> Announcements { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //Set your own connection string
             optionsBuilder.UseSqlServer("Data Source=WINDOWS-4PGG12B;Initial Catalog=FindARoomate;Integrated Security=True;TrustServerCertificate=True;");
         }
     }
