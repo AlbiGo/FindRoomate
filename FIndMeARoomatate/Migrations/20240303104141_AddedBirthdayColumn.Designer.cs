@@ -4,6 +4,7 @@ using FIndMeARoomatate.DataLayer.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FIndMeARoomatate.Migrations
 {
     [DbContext(typeof(RoommateDBContext))]
-    partial class RoommateDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240303104141_AddedBirthdayColumn")]
+    partial class AddedBirthdayColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
