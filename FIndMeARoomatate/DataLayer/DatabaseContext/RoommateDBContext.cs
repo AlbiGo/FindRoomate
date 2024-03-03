@@ -20,7 +20,7 @@ namespace FIndMeARoomatate.DataLayer.DatabaseContext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Set your own connection string
-            optionsBuilder.UseSqlServer("Data Source=WINDOWS-4PGG12B;Initial Catalog=FindARoomate;Integrated Security=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-4G2LNIV;Initial Catalog=FindARoomate;Integrated Security=True;TrustServerCertificate=True;");
         }
     }
 }
