@@ -12,6 +12,8 @@ Console.WriteLine("1 - Register");
 Console.WriteLine("2 - Get All students");
 Console.WriteLine("3 - Log In");
 Console.WriteLine("4 - My Profile");
+Console.WriteLine("5 - Make an announcement");
+
 
 int choice =  int.Parse(Console.ReadLine());
 
@@ -63,6 +65,18 @@ switch (choice)
             //Register
             var studentService = new StudentService();
             studentService.GetMyProfile(Email);
+            break;
+        }
+    case 5:
+        {
+            //Get My Profile
+            //Get Log in Credentials
+            Console.WriteLine("Enter Student Email");
+            var Email = Console.ReadLine();
+
+            //Register
+            var studentService = new AnnouncementService();
+            studentService.AddAnnouncement(Email);
             break;
         }
 }
