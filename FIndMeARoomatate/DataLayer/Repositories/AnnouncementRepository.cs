@@ -1,6 +1,5 @@
 ﻿using FIndMeARoomatate.DataLayer.DatabaseContext;
 using FIndMeARoomatate.DataLayer.Entities;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,42 +8,30 @@ using System.Threading.Tasks;
 
 namespace FIndMeARoomatate.DataLayer.Repositories
 {
-    public class StudentRepository
+    public class AnnouncementRepository
     {
-        public void AddStudent(Student student)
-        {
-            //DbContext Add Method
+        public void AddAnnouncement(Announcement announcement)
+        { // DbContext Add Method
             var dbContext = new RoommateDBContext();
-            dbContext.Students.Add(student);
+            dbContext.Announcements.Add(announcement);
             dbContext.SaveChanges();
-
         }
-        //get All Students 
-    
-        public  List<Student> GetAllStudent()
+        // Get All announcement
+        public List<Announcement> GetAllAnnouncement()
         {
             var context = new RoommateDBContext();
-            var students = context.Students.ToList();
-
-            foreach (var s in students)
-            {
-                Console.WriteLine(s.Name + "         " + s.Surname + "        " + s.Address);
-            }
-            return students;
-
+            var announcement = context.Announcements.ToList();
+            return announcement;
         }
         // Get By ID
-
-        public Student FindByID(int id)
+        public Announcement FindByID(int id)
         {
             try
             {
                 var dbContext = new RoommateDBContext();
-
-                var student = dbContext.Students.Where(p => p.Id == id)
+                var announcement = dbContext.Announcements.Where(p => p.ID == id)
                     .FirstOrDefault();
-
-                return student;
+                return announcement;
             }
             catch (Exception ex)
             {
@@ -52,17 +39,15 @@ namespace FIndMeARoomatate.DataLayer.Repositories
                 throw ex;
             }
         }
-
-        //Update
         //Remove
-        public void DeleteStudent(Student student)
+        public void DeleteAnnouncement(Announcement announcement)
         {
             try
             {
                 var dbContext = new RoommateDBContext();
-                dbContext.Students.Remove(student);
+                dbContext.Announcements.Remove(announcement);
                 dbContext.SaveChanges();
-                Console.WriteLine("Student removed");
+                Console.WriteLine("Announcement removed");
             }
             catch (Exception ex)
             {
@@ -70,13 +55,13 @@ namespace FIndMeARoomatate.DataLayer.Repositories
                 throw ex;
             }
         }
-
-        public void UpdateStudent(Student student)
+        //Update
+        public void UpdateAnnouncement(Announcement announcement)
         {
             try
             {
                 var dbContext = new RoommateDBContext();
-                dbContext.Students.Update(student);
+                dbContext.Announcements.Update(announcement);
                 dbContext.SaveChanges();
             }
             catch (Exception ex)
@@ -86,6 +71,5 @@ namespace FIndMeARoomatate.DataLayer.Repositories
             }
         }
     }
-
 }
 
